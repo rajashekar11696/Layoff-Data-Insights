@@ -1,3 +1,29 @@
+## Project Overview: Layoff Data Analysis and Cleaning
+
+**Goal:** To clean, analyze, and derive insights from a dataset containing layoff information.
+
+**Key Steps:**
+
+1. **Data Preparation:**
+   * Create a staging area to isolate data cleaning processes.
+   * Identify and remove duplicate records based on key fields.
+   * Standardize data formats for columns like `company`, `country`, and `date`.
+   * Handle missing values in critical columns like `total_laid_off` and `percentage_laid_off`.
+
+2. **Exploratory Data Analysis (EDA):**
+   * Calculate summary statistics (max, min, average) for key metrics.
+   * Identify trends and patterns in layoff data over time.
+   * Analyze layoffs by industry, company, and region.
+
+3. **In-Depth Analysis:**
+   * Calculate key performance indicators (KPIs) related to layoffs.
+   * Explore relationships between different variables (e.g., company size, industry, layoff percentage).
+   * Identify potential outliers or anomalies in the data.
+
+**Overall Objective:**
+To transform raw layoff data into clean, structured information that can be used to understand layoff trends, identify impacted industries and regions, and support data-driven decision making.
+ 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 **Data Cleaning Steps:**
 
 1. **Create a Staging Table (`layoffs_staging`):**
@@ -69,7 +95,7 @@ select month1, totaloff,sum(totaloff) over (order by month1) as rolling_total fr
 
 6. **Company-Specific Insights**:
    - Companies with the highest average percentage of layoffs, giving a perspective on the relative impact of layoffs within companies.
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## Key Performance Indicators (KPIs)
 
 1. **Total Laid Off by Company**:
