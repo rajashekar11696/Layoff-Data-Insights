@@ -46,7 +46,8 @@
     - `SELECT company, AVG(percentage_laid_off) FROM layoffs_staging2 GROUP BY company ORDER BY 2 DESC;` calculates the average percentage of layoffs for each company, sorted by the highest average.
 11. **Monthly Layoff Trends:**
     - These queries calculate the total layoffs per month and a rolling total:
-        - `SELECT SUBSTRING(date, 1, 7) AS month1, SUM(total_laid_off) FROM layoffs_staging2 WHERE SUB
+        - `SELECT SUBSTRING(date, 1, 7) AS month1, SUM(total_laid_off) FROM layoffs_staging2 WHERE substring(date,1,7) is not null group by month1 order by 1 asc) 
+select month1, totaloff,sum(totaloff) over (order by month1) as rolling_total from x
 
 
 ## Top Findings
